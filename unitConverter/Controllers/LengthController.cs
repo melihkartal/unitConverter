@@ -13,10 +13,18 @@ public class LengthController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    
+     public IActionResult Index()
     {
         return View("Views/Lengths/Index.cshtml");
     }
+
+    [HttpPost]
+    public IActionResult ReceiveData(string length, string convertFrom, string convertTo)
+    {   
+        return View("Views/Lengths/New.cshtml");
+    }
+
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

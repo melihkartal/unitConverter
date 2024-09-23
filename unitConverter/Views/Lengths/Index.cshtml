@@ -1,74 +1,57 @@
 @{
     ViewData["Title"] = "Unit Converter";
-   
-
 }
 
 <style>
-    
-        .length-calculator-container{
-            display :flex;
-            flex-direction:column;
-            align-items : flex-start;
-         
-
-        }
-
-      
+    .length-calculator-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 </style>
 
 <div class="text-center">
-    <h1 class="display-4">Lengths  App</h1>
-   
+    <h1 class="display-4">Lengths App</h1>
 </div>
 
- <form action="">
-
-    <div class = "length-calculator-container">
-        <div class = "length-input">
+<form asp-controller="Length" asp-action="ReceiveData" method="post">
+    <div class="length-calculator-container">
+        <div class="length-input">
             <h4>Enter the length to convert</h4>
-            <input type="text">
+            <input type="text" name="length" id="length">
         </div>
-        <div class = "length-convert-from-item">
+        <div class="length-convert-from-item">
             <h4>Unit to Convert From</h4>
-             <label for="convert-from-length"></label>
-                <select id="length-convert-from-select" name="cars">
-                    <option value="0"></option>
-                    <option value="millimeter">Millimeter</option>
-                    <option value="centimeter">Centimeter</option>
-                    <option value="meter">Meter</option>
-                    <option value="kilometer">kilometer</option>
-                    <option value="inches">Inches</option>
-                    <option value="foot">Foots</option>
-                    <option value="yard">Yards</option>
-                    <option value="mile">Miles</option>
-                    
-                </select> 
-
-        </div>
-        <div class = "length-convert-to-item">
-            <h4>Unit to Convert To</h4>
-            <label for="convert-from-length"></label>
-                <select id="length-convert-from-select" name="cars">
-                    <option value="0"></option>
-                    <option value="millimeter">Millimeter</option>
-                    <option value="centimeter">Centimeter</option>
-                    <option value="meter">Meter</option>
-                    <option value="kilometer">kilometer</option>
-                    <option value="inches">Inches</option>
-                    <option value="foot">Foots</option>
-                    <option value="yard">Yards</option>
-                    <option value="mile">Miles</option>
-                </select> 
-
-        </div>
-            <div class = "length-button">
-                  <button type="button" onclick="">Convert</button> 
-            </div>
-
            
+            <select id="convertFrom" name="convertFrom">
+                <option value="">Select unit</option>
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inches">Inches</option>
+                <option value="foot">Feet</option>
+                <option value="yard">Yards</option>
+                <option value="mile">Miles</option>
+            </select>
+        </div>
+        <div class="length-convert-to-item">
+            <h4>Unit to Convert To</h4>
+            
+            <select id="convertTo" name="convertTo">
+                <option value="">Select unit</option>
+                <option value="millimeter">Millimeter</option>
+                <option value="centimeter">Centimeter</option>
+                <option value="meter">Meter</option>
+                <option value="kilometer">Kilometer</option>
+                <option value="inches">Inches</option>
+                <option value="foot">Feet</option>
+                <option value="yard">Yards</option>
+                <option value="mile">Miles</option>
+            </select>
+        </div>
+        <div class="length-button">
+            <button type="submit">Convert</button>
+        </div>
     </div>
-
-</form> 
-
+</form>
