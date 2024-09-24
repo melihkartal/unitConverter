@@ -1,8 +1,27 @@
-@{
-    ViewData["Title"] = "Unit Converter";
-   
+@model unitConverter.Models.LengthModel
 
+@{
+    ViewData["Title"] = "Length Converter Result";
 }
 
-<h1>hello world</h1>
+<h1>Length Converter Result</h1>
 
+<div>
+    <h2>Conversion Details</h2>
+    <p>Length: @Model.UserInput</p>
+    <p>Convert From: @Model.InputFrom</p>
+    <p>Convert To: @Model.InputTo</p>
+</div>
+
+<div>ß
+    <h2>Result</h2>
+    @if (Model.UserInput != null)
+    {
+        <p>Converted Length: @Model.InputTo</p>
+        <p>@Model.UserInput @Model.InputFrom to a @Model.InputTo = @Model.Result </p>
+    }
+    else
+    {
+        <p>Conversion not performed yet.</p>
+    }
+</div>

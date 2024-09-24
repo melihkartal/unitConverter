@@ -6,15 +6,14 @@ namespace unitConverter.Controllers;
 
 public class LengthController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<LengthController> _logger;
 
-    public LengthController(ILogger<HomeController> logger)
+    public LengthController(ILogger<LengthController> logger)
     {
         _logger = logger;
     }
 
-    
-     public IActionResult Index()
+    public IActionResult Index()
     {
         return View("Views/Lengths/Index.cshtml");
     }
@@ -22,10 +21,13 @@ public class LengthController : Controller
     [HttpPost]
     public IActionResult ReceiveData(string length, string convertFrom, string convertTo)
     {   
-        return View("Views/Lengths/New.cshtml");
+        var model = new LengthModel(length, convertFrom, convertTo);
+        
+        // Perform conversion logic here if needed
+        // model.ConvertedLength = PerformConversion(model);
+        
+        return View("Views/Lengths/New.cshtml",model);
     }
-
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
