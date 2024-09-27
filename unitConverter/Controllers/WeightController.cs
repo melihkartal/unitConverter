@@ -19,6 +19,10 @@ public class WeightController : Controller
     }
 
 
+    public IActionResult InitializeData(){
+        return View("Views/Weights/New.cshtml");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

@@ -19,13 +19,13 @@ public class LengthController : Controller
     }
 
     [HttpPost]
-    public IActionResult ReceiveData(string length, string convertFrom, string convertTo)
+    public IActionResult InitializeData(string length, string convertFrom, string convertTo)
     {   
+        //create a model object w/data 
         var model = new LengthModel(length, convertFrom, convertTo);
+     
         
-        // Perform conversion logic here if needed
-        // model.ConvertedLength = PerformConversion(model);
-        
+        //the view gets the copy of the model we created
         return View("Views/Lengths/New.cshtml",model);
     }
 

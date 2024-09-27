@@ -1,66 +1,8 @@
 @{
-    ViewData["Title"] = "Unit Converter";
-   
-
+    ViewData["Title"] = "Temperature Converter";
 }
-
-<style>
-    
-        .length-calculator-container{
-            display :flex;
-            flex-direction:column;
-            align-items : flex-start;
-         
-
-        }
-
-      
-    }
-</style>
 
 <div class="text-center">
     <h1 class="display-4">Temperature  App</h1>
    
 </div>
-
- <form action="">
-
-    <div class = "temperature-calculator-container">
-        <div class = "temperature-input">
-            <h4>Enter the temperature to convert</h4>
-            <input type="text">
-        </div>
-        <div class = "temperature-convert-from-item">
-            <h4>Unit to Convert From</h4>
-             <label for="convert-from-temperature"></label>
-                <select id="temperature-convert-from-select" name="temperature-from">
-                    <option value="0"></option>
-                    <option value="Celsius">Celsius</option>
-                    <option value="Fahrenheit">Fahrenheit</option>
-                    <option value="Kelvin">Kelvin</option>
-                    
-                    
-                </select> 
-
-        </div>
-        <div class = "temperature-convert-to-item">
-            <h4>Unit to Convert To</h4>
-            <label for="convert-from-temperature"></label>
-                <select id="temperature-convert-from-select" name="temperature-to">
-                    <option value="0"></option>
-                    <option value="Celsius">Celsius</option>
-                    <option value="Fahrenheit">Fahrenheit</option>
-                    <option value="Kelvin">Kelvin</option>
-                   
-                </select> 
-
-        </div>
-            <div class = "temperature-button">
-                  <button type="button" onclick="">Convert</button> 
-            </div>
-
-           
-    </div>
-
-</form> 
-

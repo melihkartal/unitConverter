@@ -1,8 +1,53 @@
 @{
-    ViewData["Title"] = "Unit Converter";
+    ViewData["Title"] = "Weight Converter";
 }
 
+<style>
+    .weight-calculator-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Weights  App</h1>
-   
+    <h1 class="display-4">Weight App</h1>
 </div>
+
+<form asp-controller="Weight" asp-action="InitializeData" method="post">
+    <div class="weight-calculator-container">
+        <div class="length-input">
+            <h4>Enter the length to convert</h4>
+            <input type="text" name="length" id="length">
+        </div>
+        <div class="length-convert-from-item">
+            <h4>Unit to Convert From</h4>
+           
+            <select id="convertFrom" name="convertFrom">
+                <option value="">Select unit</option>
+                <option value="milligram">Milligram</option>
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="ounce">Ounce</option>
+                <option value="pound">Pound</option>
+               
+            </select>
+        </div>
+        <div class="weight-convert-to-item">
+            <h4>Unit to Convert To</h4>
+            
+            <select id="convertTo" name="convertTo">
+                <option value="">Select unit</option>
+                <option value="milligram">Milligram</option>
+                <option value="gram">Gram</option>
+                <option value="kilogram">Kilogram</option>
+                <option value="ounce">Ounce</option>
+                <option value="pound">Pound</option>
+               
+            </select>
+        </div>
+        <div class="weight-button">
+            <button type="submit">Convert</button>
+        </div>
+    </div>
+</form>
