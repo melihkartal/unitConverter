@@ -29,6 +29,10 @@ public class LengthController : Controller
         return View("Views/Lengths/New.cshtml",model);
     }
 
+    public string welcomeMessage(){
+        return "this is a welcome message";
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
