@@ -19,8 +19,12 @@ public class WeightController : Controller
     }
 
 
-    public IActionResult InitializeData(){
-        return View("Views/Weights/New.cshtml");
+    public IActionResult InitializeData(string weightInput, string convertFrom, string convertTo){
+
+        var model = new WeightModel(weightInput, convertFrom, convertTo);
+
+
+        return View("Views/Weights/New.cshtml",model);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
